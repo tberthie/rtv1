@@ -14,6 +14,14 @@
 
 char				parse(t_rt *rt, int fd)
 {
-	// return 0 if parse error
-	return (1);
+	char	*data;
+	char	**split;
+
+	if ((data = ft_rfc(fd)) && (split = ft_strsplit(data, '\n')))
+	{
+		free(data);
+		
+		return (1);
+	}
+	return (0);
 }
